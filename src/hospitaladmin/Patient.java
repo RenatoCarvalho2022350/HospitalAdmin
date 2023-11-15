@@ -20,6 +20,27 @@ public class Patient {
     private String birthD;
     private String bloodType;
     private int patientID;
+    /*
+    Static means it is a class variable/ it is shared by all the objec of this class
+    */
+    private static int currentID = 1;
+
+    public Patient(String name, String birthD, String bloodType) {
+        this.name = name;
+        this.birthD = birthD;
+        this.bloodType = bloodType;
+        this.patientID = currentID;
+        System.out.println(name + " has birthday " + birthD + ", Blood Type " + bloodType);
+        currentID++;
+        
+    }
+
+    
+    
+    public static int getCurrentID() {
+        return currentID;
+    }
+          
 
     public String getName() {
         return name;
@@ -35,6 +56,14 @@ public class Patient {
 
     public int getPatientID() {
         return patientID;
+    }
+
+    
+    /*
+    only this one use SET 
+    */
+    public void setName(String name) {
+        this.name = name;
     }
     
     
